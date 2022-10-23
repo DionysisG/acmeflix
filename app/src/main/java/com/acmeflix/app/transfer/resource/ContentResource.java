@@ -17,7 +17,7 @@ public class ContentResource extends BaseResource {
     private ContentType contentType;
     private String title;
     private String director;
-    private String cast;
+    private String mainCast;
     private Set<GenreResource> genre = new HashSet<>();
     private Date releaseDate;
 }

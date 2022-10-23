@@ -26,8 +26,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CONTAINTS")
-@SequenceGenerator(name = "idGenerator", sequenceName = "CONTAINTS_SEQ", initialValue = 1, allocationSize = 1)
+@Table(name = "CONTENT")
+@SequenceGenerator(name = "idGenerator", sequenceName = "CONTENT_SEQ", initialValue = 1, allocationSize = 1)
 public class Content extends BaseModel {
 
 	@NotNull
@@ -45,7 +45,7 @@ public class Content extends BaseModel {
 
 	@NotNull
 	@Column(length = 100, nullable = false)
-	private String cast;
+	private String mainCast;
 
 	@NotNull
 	@ManyToMany
