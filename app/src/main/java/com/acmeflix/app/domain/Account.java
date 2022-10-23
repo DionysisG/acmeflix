@@ -50,4 +50,8 @@ public class Account extends BaseModel {
 
 	@Column(length = 100)
 	private String address;
+
+    @NotNull
+	@Column(name = "active", nullable = false)
+    private boolean active;
 }

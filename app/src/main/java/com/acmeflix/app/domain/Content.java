@@ -30,30 +30,28 @@ import lombok.ToString;
 @SequenceGenerator(name = "idGenerator", sequenceName = "CONTAINTS_SEQ", initialValue = 1, allocationSize = 1)
 public class Content extends BaseModel {
 
-    @NotNull
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	@Column(length = 10, nullable = false)
 	private ContentType contentType;
 
-    @NotNull
+	@NotNull
 	@Column(length = 100, nullable = false)
 	private String title;
 
-    @NotNull
+	@NotNull
 	@Column(length = 40, nullable = false)
 	private String director;
 
-    @NotNull
+	@NotNull
 	@Column(length = 100, nullable = false)
 	private String cast;
 
-    @NotNull
-    @ManyToMany
-    private Set<@NotNull Genre> genres;
+	@NotNull
+	@ManyToMany
+	private Set<@NotNull Genre> genres;
 
-    @NotNull
-    @Column(nullable = false)
+	@NotNull
+	@Column(nullable = false)
 	private Date releaseDate;
-
-
 }
