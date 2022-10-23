@@ -6,7 +6,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,7 +38,6 @@ public class SubscriptionPlan extends BaseModel {
 	@Column(name = "max_profiles", nullable = false)
     private short maxProfiles;
 
-    @Null
     @Column(precision = 6, scale = 2, nullable = true)
     private double price;
 

@@ -37,9 +37,10 @@ public class ContentController extends AbstractController<Content, ContentResour
     }
 
     @GetMapping(params = {"title"})
-    public ResponseEntity<ApiResponse<ContentResource>> findByTitle(@RequestParam String title) {
+    public ResponseEntity<ApiResponse<List<ContentResource>>> findByTitleIgnoreCaseContaining(@RequestParam String title) {
+
         return ResponseEntity.ok(
-                ApiResponse.<ContentResource>builder().data(getMapper().toResource(contentService.findByTitle(title)))
+                ApiResponse.<List<ContentResource>>builder().data(getMapper().toResources(contentService.findByTitleIgnoreCaseContaining(title)))
                         .build());
     }
 

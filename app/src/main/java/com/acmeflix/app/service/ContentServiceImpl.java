@@ -22,8 +22,8 @@ public class ContentServiceImpl extends BaseServiceImpl<Content> implements Cont
 	}
 
     @Override
-    public Content findByTitle(String title) {
-        return contentRepository.findByTitle(title).orElseThrow();
+    public List<Content> findByTitleIgnoreCaseContaining (String title) {
+        return contentRepository.findByTitleIgnoreCaseContaining(title);
     }
 
     @Override

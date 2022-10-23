@@ -6,7 +6,7 @@ import com.acmeflix.app.domain.Content;
 import com.acmeflix.app.domain.ContentType;
 
 public interface ContentService extends BaseService<Content, Long> {
-    Content findByTitle(String title);
+    List<Content> findByTitleIgnoreCaseContaining(String title);
 
     List<Content> findByGenre(String genre);
 
