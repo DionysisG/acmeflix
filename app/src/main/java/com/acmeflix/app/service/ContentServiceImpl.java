@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.acmeflix.app.domain.Content;
 import com.acmeflix.app.domain.ContentType;
+import com.acmeflix.app.domain.Genre;
 import com.acmeflix.app.repository.ContentRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class ContentServiceImpl extends BaseServiceImpl<Content> implements Cont
     }
 
     @Override
-    public List<Content> findByGenre(String genre) {
+    public List<Content> findByGenre(Genre genre) {
         return contentRepository.findByGenre(genre);
     }
 

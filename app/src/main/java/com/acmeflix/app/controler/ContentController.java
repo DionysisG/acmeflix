@@ -14,6 +14,7 @@ import com.acmeflix.app.domain.ContentType;
 import com.acmeflix.app.mapper.ContentMapper;
 import com.acmeflix.app.service.BaseService;
 import com.acmeflix.app.service.ContentService;
+import com.acmeflix.app.service.GenreService;
 import com.acmeflix.app.transfer.ApiResponse;
 import com.acmeflix.app.transfer.resource.ContentResource;
 
@@ -25,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class ContentController extends AbstractController<Content, ContentResource> {
     private final ContentService contentService;
     private final ContentMapper contentMapper;
+    private final GenreService genreService;
 
     @Override
     protected BaseService<Content, Long> getBaseService() {
@@ -54,7 +56,7 @@ public class ContentController extends AbstractController<Content, ContentResour
     @GetMapping(params = {"genre"})
     public ResponseEntity<ApiResponse<List<ContentResource>>> findByGenre(@RequestParam String genre) {
         return ResponseEntity.ok(
-                ApiResponse.<List<ContentResource>>builder().data(getMapper().toResources(contentService.findByGenre(genre)))
+                ApiResponse.<List<ContentResource>>builder().data(getMapper().toResources(contentService.findByGenre(genreService.findByDescription(genre))))
                         .build());
     }
 
