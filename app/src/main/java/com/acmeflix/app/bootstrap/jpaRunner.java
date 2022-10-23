@@ -21,6 +21,7 @@ public class jpaRunner extends BaseComponent implements CommandLineRunner {
 	private final AccountService accountService;
 	private final GenreService genreService;
 	private final ContentService contentService;
+	private final EpisodeService episodeService;
 
 	@Override
 	public void run(final String... args) throws Exception {
@@ -111,5 +112,24 @@ public class jpaRunner extends BaseComponent implements CommandLineRunner {
 		);
 
 		contents.forEach(contentService::create);
+
+
+		List<Episode> episodes = episodeService.createAll(
+			Episode.builder()
+				.content(contents.get(2))
+				.title("Middle Ground")
+				.seasonNum((short) 3)
+				.episodeNum((short) 11)
+			.build(),
+
+			Episode.builder()
+				.content(contents.get(2))
+				.title("-30-")
+				.seasonNum((short) 5)
+				.episodeNum((short) 10)
+			.build()
+		);
+
+		episodes.forEach(episodeService::create);
 	}
 }

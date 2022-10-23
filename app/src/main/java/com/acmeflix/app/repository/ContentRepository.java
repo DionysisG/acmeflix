@@ -1,6 +1,7 @@
 package com.acmeflix.app.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -17,4 +18,7 @@ public interface ContentRepository extends JpaRepository<Content, Long> {
     List<Content> findByGenre(final Genre genre);
 
     List<Content> findByContentType(final ContentType contentType);
+
+    Optional<Content> findById(final Long id);
+
 }

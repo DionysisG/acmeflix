@@ -36,4 +36,9 @@ public class ContentServiceImpl extends BaseServiceImpl<Content> implements Cont
     public List<Content> findByContentType(ContentType contentType) {
         return contentRepository.findByContentType(contentType);
     }
+
+    @Override
+    public Content findById(Long id) {
+        return contentRepository.findById(id).orElseThrow();
+    }
 }

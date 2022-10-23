@@ -59,5 +59,4 @@ public class ContentController extends AbstractController<Content, ContentResour
                 ApiResponse.<List<ContentResource>>builder().data(getMapper().toResources(contentService.findByGenre(genreService.findByDescription(genre))))
                         .build());
     }
-
 }

@@ -12,4 +12,6 @@ public interface ContentService extends BaseService<Content, Long> {
     List<Content> findByGenre(Genre genre);
 
     List<Content> findByContentType(ContentType contentType);
+
+    Content findById(Long id);
 }
