@@ -49,7 +49,7 @@ public class Content extends BaseModel {
 
 	@NotNull
 	@ManyToMany
-	private Set<@NotNull Genre> genres;
+	private Set<@NotNull Genre> genre;
 
 	@NotNull
 	@Column(nullable = false)

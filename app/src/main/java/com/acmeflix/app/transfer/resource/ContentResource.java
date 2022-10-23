@@ -18,6 +18,6 @@ public class ContentResource extends BaseResource {
     private String title;
     private String director;
     private String cast;
-    private Set<GenreResource> genres = new HashSet<>();
+    private Set<GenreResource> genre = new HashSet<>();
     private Date releaseDate;
 }
